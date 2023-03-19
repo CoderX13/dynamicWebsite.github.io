@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Home</title>
+  </head>
+  <body>
+    {{>navbar data = detail}}
+   {{> slider sildes=slides}}
+
+   {{!-- This is Banner One Section --}}
+    <section class="banner1_section background1 py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>This Is New Technology</h2>
+            <p>Hello This is the Dummy Text For Showing the User View</p>
+            <button class="btn btn-outline-primary">Start Learning</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+   {{!-- {{Services section}} --}}
+   <section class="py-4" id="services_section">
+   <div class="container">
+     <h1 class="text-center text-secondary">Our Services</h1>
+    <div class="row mt-5">
+        {{!-- first Col Service --}}
+        {{#each services}}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container text-center py-3"><i class="{{this.icon}} service_icon"></i></div>
+                    <h3 class="card-title">{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                    <a href="{{this.linkText}}">{{this.link}}</a>
+                    <a href="#" class="ml-3">support</a>
+                </div>      
+            </div>
+        </div>
+       {{/each}}
+    </div>
+   </div>
+   </section>
+
+{{!-- banner2 --}}
+<section class="banner2_section">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-6">
+{{!-- leftSide --}}
+<h4>Welcome To the New World</h4>
+
+<p>Organized criminals are installing equipment on legitimate bank ATMs steal both the unsuspecting 
+  customers ATM card number and the PIN. The team sits nearby in a car receiving the information 
+  transmitted wirelessly over weekends and evenings from equipment they install on the front of the ATM. 
+  If you observe an attachment that is illustrated in the accompanying photos do not use the ATM and report it 
+  immediately to the bank using the 800 numbers or phone on the front of the ATM.</p>
+
+<p>The equipment used to capture your ATM card number and PIN is cleverly disguised to look like normal 
+  ATM equipment. A “skimmer” is mounted to the front of the normal ATM card slot that reads the ATM card number 
+  and transmits it to the criminals sitting in a nearby car.</p>
+
+<p>Skimmers may be installed on ATM machines, and sometimes you can’t even notice them. A small device goes over the 
+  normal card reading slot and reads your card’s magnetic stripe. Skimmers can also be handheld devices that a dishonest merchant 
+  can keep in his pocket. While charging your card while you’re out at dinner, for example, a scammer can run your card through a 
+  skimmer as well.</p>
+<button class="btn btn-primary">Click Here</button>
+      </div>
+      <div class="col-md-6">
+{{!-- rightSide --}}
+    <img src="/static/images/atmlogo.svg" alt="no_pic" style="width: 500px;">
+      </div>
+    </div>
+  </div>
+  <br>
+</section>
+
+   {{!-- contactUs section --}}
+
+    <section id="contactus_section" class="py-5 background1">
+        <div class="container">
+          <h3 class="text-center text-secondary">Contact Us</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/process-contact-form" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="contactNumberField" class="form-label">Your Contact Number</label>
+    <input name="phone" type="number" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-floating mt-2">
+  <textarea name="query" style="height: 200px;" class="form-control" placeholder="Enter Your Query Here" id="queryField" style="height: 100px"></textarea>
+  <label for="queryField">Your Query</label>
+</div>
+  <div class="container text-center">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{!-- about section --}}
+    <section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            
+            <h3>About Cyber Security LLC</h3>
+            <h5>Phone : 9999999999</h5>
+            <h5>Email: cyberSecurity@gmail.com</h5>
+            <h5>Address: abc apartment, New Delhi
+            </h5>
+          <button class="btn btn-success">ABout US</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{!-- footer work is here --}}
+<footer class="footer background1 text-center py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center p-4">2021 Copyright</div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
